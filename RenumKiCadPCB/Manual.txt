@@ -1,0 +1,40 @@
+RenumberKiCadPCB Options 
+This is a command line tool at the moment. Typical invocation is
+
+RenumberKiCadPCB -iRenumtest
+(do not add the extension “.kicad_pcb” as the program will do that)
+
+The only required parameter is the input file
+
+-iInfile		The Input file names (infile.kicad_pcb,  infile.sch) (required)
+		Infile is renamed infileRenumBack.kicad_pcb, infileRenumBack.sch
+
+These are optional parameters:
+-ooutfile	The Output file names (outfile.kicad_pcb, outfile.sch) (defaults to Infile)
+
+-fs		Front sort direction
+		-fs[axis]			sort [axis] first where [axis] is x or y
+		-fs[1stdir][2nddir]	sort[1st][2nd] where [1st]or [2nd] is 
+						A(ascending) or D(escending)
+		-fsXAD	means sort X first Ascending then Y Descending
+		-fxYDD	means sort Y first Descending then X Descending
+
+		DEFAULT is fsYAA (top to bottom, left to right)
+
+-bs		Bottom sort direction same arguents as -fs
+		DEFAULT is bsYAD (top to bottom, right to left)
+
+-j		Set the Jog or the variability between when a location is the same (i.e 0.1 and 0.15 are 			the same if jog is 0.5. –j0.1 means 0.1mm jog. 
+
+-fp		Top refdes prepend string (i.e. tpT_ means R1 will be T_R1 if it is on top side
+		DEFAULT is “”
+-bp		Bottom refdes prepend string (i.e. bpB_ means R2 will be B_R2 if it is on bottom side
+		DEFAULT is “”
+
+-fr		Top refdes start value (i.e. fp100 means parts will start at 100 on the front side
+		DEFAULT is 1
+-br		Bottom refdes start string (i.e. bpB_ means R2 will be B_R2 if it is on bottom side
+		DEFAULT is to continue from the last front refdes
+-m		Sort on module location. Default is sort on Ref Des Location
+-v		Verbose mode. Default is off
+-?		Print out this file

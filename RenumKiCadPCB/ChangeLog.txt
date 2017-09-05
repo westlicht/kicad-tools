@@ -1,0 +1,11 @@
+Change Log V0.100 to V0.101
+
+Making under Linux reported warnings which were not reported when compiled on Windows Eclipse neon. 
+I also noted a but in run time reporting if the program was aborted.
+
+Neither of these issues impacted program function
+
+V0.101 		Replaced 	"printf(ERRSTR)" with puts ( ERRSTR ) in ParseCommandLine because of compiler warning under Linux
+  			Added		return( ERRINVALIDEXIT ); because of compiler warning under Linux
+  			Moved		gettimeofday( ); from main() to ParseCommandLine and changed abort
+			decision to ensure valid run time reported
