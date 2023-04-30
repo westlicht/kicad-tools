@@ -1,0 +1,3 @@
+[submodule "InteractiveHtmlBom"]
+	path = InteractiveHtmlBom
+	url = https://github.com/openscopeproject/InteractiveHtmlBom.git
